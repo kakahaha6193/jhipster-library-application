@@ -1,0 +1,128 @@
+<div>
+  <h2 id="page-heading" data-cy="SachHeading">
+    <span jhiTranslate="libraryApplicationApp.sach.home.title">Saches</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="libraryApplicationApp.sach.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-sach"
+        [routerLink]="['/sach/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="libraryApplicationApp.sach.home.createLabel"> Create a new Sach </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="saches?.length === 0">
+    <span jhiTranslate="libraryApplicationApp.sach.home.notFound">No saches found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="saches && saches.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="tenSach">
+            <span jhiTranslate="libraryApplicationApp.sach.tenSach">Ten Sach</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="giaNiemYet">
+            <span jhiTranslate="libraryApplicationApp.sach.giaNiemYet">Gia Niem Yet</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="tacgia">
+            <span jhiTranslate="libraryApplicationApp.sach.tacgia">Tacgia</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="giaThue">
+            <span jhiTranslate="libraryApplicationApp.sach.giaThue">Gia Thue</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="nganXep">
+            <span jhiTranslate="libraryApplicationApp.sach.nganXep">Ngan Xep</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="theloai.id">
+            <span jhiTranslate="libraryApplicationApp.sach.theloai">Theloai</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="nhaxuatban.id">
+            <span jhiTranslate="libraryApplicationApp.sach.nhaxuatban">Nhaxuatban</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="giasach.id">
+            <span jhiTranslate="libraryApplicationApp.sach.giasach">Giasach</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sach of saches; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/sach', sach.id, 'view']">{{ sach.id }}</a>
+          </td>
+          <td>{{ sach.tenSach }}</td>
+          <td>{{ sach.giaNiemYet }}</td>
+          <td>{{ sach.tacgia }}</td>
+          <td>{{ sach.giaThue }}</td>
+          <td>{{ sach.nganXep }}</td>
+          <td>
+            <div *ngIf="sach.theloai">
+              <a [routerLink]="['/theloai', sach.theloai?.id, 'view']">{{ sach.theloai?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="sach.nhaxuatban">
+              <a [routerLink]="['/nhaxuatban', sach.nhaxuatban?.id, 'view']">{{ sach.nhaxuatban?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="sach.giasach">
+              <a [routerLink]="['/giasach', sach.giasach?.id, 'view']">{{ sach.giasach?.id }}</a>
+            </div>
+          </td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/sach', sach.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/sach', sach.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(sach)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="saches && saches.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

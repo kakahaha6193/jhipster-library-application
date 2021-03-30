@@ -1,0 +1,25 @@
+{
+  "libraryApplicationApp": {
+    "giasach": {
+      "home": {
+        "title": "Giasaches",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Giasach",
+        "createOrEditLabel": "Create or edit a Giasach",
+        "notFound": "No Giasaches found"
+      },
+      "created": "A new Giasach is created with identifier {{ param }}",
+      "updated": "A Giasach is updated with identifier {{ param }}",
+      "deleted": "A Giasach is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Giasach {{ id }}?"
+      },
+      "detail": {
+        "title": "Giasach"
+      },
+      "id": "ID",
+      "thuTu": "Thu Tu",
+      "phongdungsach": "Phongdungsach"
+    }
+  }
+}

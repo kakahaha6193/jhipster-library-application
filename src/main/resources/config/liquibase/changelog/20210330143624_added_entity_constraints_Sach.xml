@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Sach.
+    -->
+    <changeSet id="20210330143624-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="theloai_id"
+                                 baseTableName="sach"
+                                 constraintName="fk_sach__theloai_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="theloai"/>
+
+        <addForeignKeyConstraint baseColumnNames="nhaxuatban_id"
+                                 baseTableName="sach"
+                                 constraintName="fk_sach__nhaxuatban_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="nhaxuatban"/>
+
+        <addForeignKeyConstraint baseColumnNames="giasach_id"
+                                 baseTableName="sach"
+                                 constraintName="fk_sach__giasach_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="giasach"/>
+
+        <addForeignKeyConstraint baseColumnNames="sach_id"
+                                 baseTableName="rel_sach__nhapsach"
+                                 constraintName="fk_rel_sach__nhapsach__sach_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sach"/>
+
+        <addForeignKeyConstraint baseColumnNames="nhapsach_id"
+                                 baseTableName="rel_sach__nhapsach"
+                                 constraintName="fk_rel_sach__nhapsach__nhapsach_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="nhapsach"/>
+        
+    </changeSet>
+</databaseChangeLog>

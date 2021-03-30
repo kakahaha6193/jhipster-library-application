@@ -1,0 +1,92 @@
+<div>
+  <h2 id="page-heading" data-cy="CuonsachHeading">
+    <span jhiTranslate="libraryApplicationApp.cuonsach.home.title">Cuonsaches</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="libraryApplicationApp.cuonsach.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-cuonsach"
+        [routerLink]="['/cuonsach/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="libraryApplicationApp.cuonsach.home.createLabel"> Create a new Cuonsach </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="cuonsaches?.length === 0">
+    <span jhiTranslate="libraryApplicationApp.cuonsach.home.notFound">No cuonsaches found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="cuonsaches && cuonsaches.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="libraryApplicationApp.cuonsach.ngayHetHan">Ngay Het Han</span></th>
+          <th scope="col"><span jhiTranslate="libraryApplicationApp.cuonsach.trangThai">Trang Thai</span></th>
+          <th scope="col"><span jhiTranslate="libraryApplicationApp.cuonsach.sach">Sach</span></th>
+          <th scope="col"><span jhiTranslate="libraryApplicationApp.cuonsach.muonsach">Muonsach</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cuonsach of cuonsaches; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/cuonsach', cuonsach.id, 'view']">{{ cuonsach.id }}</a>
+          </td>
+          <td>{{ cuonsach.ngayHetHan | formatMediumDatetime }}</td>
+          <td>{{ cuonsach.trangThai }}</td>
+          <td>
+            <div *ngIf="cuonsach.sach">
+              <a [routerLink]="['/sach', cuonsach.sach?.id, 'view']">{{ cuonsach.sach?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="cuonsach.muonsach">
+              <a [routerLink]="['/muonsach', cuonsach.muonsach?.id, 'view']">{{ cuonsach.muonsach?.id }}</a>
+            </div>
+          </td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/cuonsach', cuonsach.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/cuonsach', cuonsach.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(cuonsach)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

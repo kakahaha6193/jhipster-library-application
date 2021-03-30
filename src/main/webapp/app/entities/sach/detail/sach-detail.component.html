@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="sach">
+      <h2 data-cy="sachDetailsHeading"><span jhiTranslate="libraryApplicationApp.sach.detail.title">Sach</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ sach.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.sach.tenSach">Ten Sach</span></dt>
+        <dd>
+          <span>{{ sach.tenSach }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.sach.giaNiemYet">Gia Niem Yet</span></dt>
+        <dd>
+          <span>{{ sach.giaNiemYet }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.sach.tacgia">Tacgia</span></dt>
+        <dd>
+          <span>{{ sach.tacgia }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.sach.giaThue">Gia Thue</span></dt>
+        <dd>
+          <span>{{ sach.giaThue }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.sach.nganXep">Ngan Xep</span></dt>
+        <dd>
+          <span>{{ sach.nganXep }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.sach.theloai">Theloai</span></dt>
+        <dd>
+          <div *ngIf="sach.theloai">
+            <a [routerLink]="['/theloai', sach.theloai?.id, 'view']">{{ sach.theloai?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.sach.nhaxuatban">Nhaxuatban</span></dt>
+        <dd>
+          <div *ngIf="sach.nhaxuatban">
+            <a [routerLink]="['/nhaxuatban', sach.nhaxuatban?.id, 'view']">{{ sach.nhaxuatban?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.sach.giasach">Giasach</span></dt>
+        <dd>
+          <div *ngIf="sach.giasach">
+            <a [routerLink]="['/giasach', sach.giasach?.id, 'view']">{{ sach.giasach?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.sach.nhapsach">Nhapsach</span></dt>
+        <dd>
+          <span *ngFor="let nhapsach of sach.nhapsaches; let last = last">
+            <a [routerLink]="['/nhapsach', nhapsach?.id, 'view']">{{ nhapsach.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/sach', sach.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

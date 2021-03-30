@@ -1,0 +1,31 @@
+{
+  "libraryApplicationApp": {
+    "docgia": {
+      "home": {
+        "title": "Docgias",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Docgia",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Docgia",
+        "notFound": "No Docgias found"
+      },
+      "created": "Một Docgia mới được tạo với định danh {{ param }}",
+      "updated": "Một Docgia cập nhật với định danh {{ param }}",
+      "deleted": "Một Docgia đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Docgia {{ id }}?"
+      },
+      "detail": {
+        "title": "Docgia"
+      },
+      "id": "ID",
+      "hoTen": "Ho Ten",
+      "ngaySinh": "Ngay Sinh",
+      "diaChi": "Dia Chi",
+      "cmt": "Cmt",
+      "trangThai": "Trang Thai",
+      "tienCoc": "Tien Coc",
+      "thuephong": "Thuephong",
+      "muonsach": "Muonsach"
+    }
+  }
+}

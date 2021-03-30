@@ -1,0 +1,62 @@
+{
+  "name": "Sach",
+  "fields": [
+    {
+      "fieldName": "tenSach",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "giaNiemYet",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tacgia",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "giaThue",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "nganXep",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "theloai",
+      "otherEntityRelationshipName": "sach",
+      "relationshipName": "theloai"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "nhaxuatban",
+      "otherEntityRelationshipName": "sach",
+      "relationshipName": "nhaxuatban"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "giasach",
+      "otherEntityRelationshipName": "sach",
+      "relationshipName": "giasach"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "nhapsach",
+      "otherEntityRelationshipName": "sach",
+      "relationshipName": "nhapsach",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "sach",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210330143624"
+}

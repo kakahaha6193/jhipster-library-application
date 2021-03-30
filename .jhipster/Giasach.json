@@ -1,0 +1,27 @@
+{
+  "name": "Giasach",
+  "fields": [
+    {
+      "fieldName": "thuTu",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "phongdungsach",
+      "otherEntityRelationshipName": "giasach",
+      "relationshipName": "phongdungsach"
+    }
+  ],
+  "entityTableName": "giasach",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210330143626"
+}

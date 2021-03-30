@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="thuephong">
+      <h2 data-cy="thuephongDetailsHeading"><span jhiTranslate="libraryApplicationApp.thuephong.detail.title">Thuephong</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ thuephong.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.thuephong.ngayThue">Ngay Thue</span></dt>
+        <dd>
+          <span>{{ thuephong.ngayThue | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.thuephong.ca">Ca</span></dt>
+        <dd>
+          <span>{{ thuephong.ca }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.thuephong.docgia">Docgia</span></dt>
+        <dd>
+          <div *ngIf="thuephong.docgia">
+            <a [routerLink]="['/docgia', thuephong.docgia?.id, 'view']">{{ thuephong.docgia?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.thuephong.phongdocsach">Phongdocsach</span></dt>
+        <dd>
+          <div *ngIf="thuephong.phongdocsach">
+            <a [routerLink]="['/phongdocsach', thuephong.phongdocsach?.id, 'view']">{{ thuephong.phongdocsach?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.thuephong.docgia">Docgia</span></dt>
+        <dd>
+          <div *ngIf="thuephong.docgia">
+            <a [routerLink]="['/docgia', thuephong.docgia?.id, 'view']">{{ thuephong.docgia?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.thuephong.thuthu">Thuthu</span></dt>
+        <dd>
+          <div *ngIf="thuephong.thuthu">
+            <a [routerLink]="['/thuthu', thuephong.thuthu?.id, 'view']">{{ thuephong.thuthu?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/thuephong', thuephong.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

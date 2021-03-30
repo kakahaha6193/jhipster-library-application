@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="nhapsach">
+      <h2 data-cy="nhapsachDetailsHeading"><span jhiTranslate="libraryApplicationApp.nhapsach.detail.title">Nhapsach</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ nhapsach.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.nhapsach.ngayGioNhap">Ngay Gio Nhap</span></dt>
+        <dd>
+          <span>{{ nhapsach.ngayGioNhap | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.nhapsach.soLuong">So Luong</span></dt>
+        <dd>
+          <span>{{ nhapsach.soLuong }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.nhapsach.thuthu">Thuthu</span></dt>
+        <dd>
+          <div *ngIf="nhapsach.thuthu">
+            <a [routerLink]="['/thuthu', nhapsach.thuthu?.id, 'view']">{{ nhapsach.thuthu?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.nhapsach.thuthu">Thuthu</span></dt>
+        <dd>
+          <div *ngIf="nhapsach.thuthu">
+            <a [routerLink]="['/thuthu', nhapsach.thuthu?.id, 'view']">{{ nhapsach.thuthu?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/nhapsach', nhapsach.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

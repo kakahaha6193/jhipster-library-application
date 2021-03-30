@@ -1,0 +1,25 @@
+{
+  "libraryApplicationApp": {
+    "nhaxuatban": {
+      "home": {
+        "title": "Nhaxuatbans",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Nhaxuatban",
+        "createOrEditLabel": "Create or edit a Nhaxuatban",
+        "notFound": "No Nhaxuatbans found"
+      },
+      "created": "A new Nhaxuatban is created with identifier {{ param }}",
+      "updated": "A Nhaxuatban is updated with identifier {{ param }}",
+      "deleted": "A Nhaxuatban is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Nhaxuatban {{ id }}?"
+      },
+      "detail": {
+        "title": "Nhaxuatban"
+      },
+      "id": "ID",
+      "tenNXB": "Ten NXB",
+      "diaChi": "Dia Chi"
+    }
+  }
+}

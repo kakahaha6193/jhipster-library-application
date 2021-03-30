@@ -1,0 +1,25 @@
+{
+  "libraryApplicationApp": {
+    "phongdungsach": {
+      "home": {
+        "title": "Phongdungsaches",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Phongdungsach",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Phongdungsach",
+        "notFound": "No Phongdungsaches found"
+      },
+      "created": "Một Phongdungsach mới được tạo với định danh {{ param }}",
+      "updated": "Một Phongdungsach cập nhật với định danh {{ param }}",
+      "deleted": "Một Phongdungsach đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Phongdungsach {{ id }}?"
+      },
+      "detail": {
+        "title": "Phongdungsach"
+      },
+      "id": "ID",
+      "tenPhong": "Ten Phong",
+      "viTri": "Vi Tri"
+    }
+  }
+}

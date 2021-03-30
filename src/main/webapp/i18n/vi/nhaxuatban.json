@@ -1,0 +1,25 @@
+{
+  "libraryApplicationApp": {
+    "nhaxuatban": {
+      "home": {
+        "title": "Nhaxuatbans",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Nhaxuatban",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Nhaxuatban",
+        "notFound": "No Nhaxuatbans found"
+      },
+      "created": "Một Nhaxuatban mới được tạo với định danh {{ param }}",
+      "updated": "Một Nhaxuatban cập nhật với định danh {{ param }}",
+      "deleted": "Một Nhaxuatban đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Nhaxuatban {{ id }}?"
+      },
+      "detail": {
+        "title": "Nhaxuatban"
+      },
+      "id": "ID",
+      "tenNXB": "Ten NXB",
+      "diaChi": "Dia Chi"
+    }
+  }
+}

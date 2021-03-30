@@ -1,0 +1,86 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-cuonsach-heading"
+        data-cy="CuonsachCreateUpdateHeading"
+        jhiTranslate="libraryApplicationApp.cuonsach.home.createOrEditLabel"
+      >
+        Create or edit a Cuonsach
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.cuonsach.ngayHetHan" for="field_ngayHetHan"
+            >Ngay Het Han</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_ngayHetHan"
+              data-cy="ngayHetHan"
+              type="datetime-local"
+              class="form-control"
+              name="ngayHetHan"
+              formControlName="ngayHetHan"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.cuonsach.trangThai" for="field_trangThai">Trang Thai</label>
+          <input type="number" class="form-control" name="trangThai" id="field_trangThai" data-cy="trangThai" formControlName="trangThai" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.cuonsach.sach" for="field_sach">Sach</label>
+          <select class="form-control" id="field_sach" data-cy="sach" name="sach" formControlName="sach">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="sachOption.id === editForm.get('sach')!.value?.id ? editForm.get('sach')!.value : sachOption"
+              *ngFor="let sachOption of sachesSharedCollection; trackBy: trackSachById"
+            >
+              {{ sachOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.cuonsach.muonsach" for="field_muonsach">Muonsach</label>
+          <select class="form-control" id="field_muonsach" data-cy="muonsach" name="muonsach" formControlName="muonsach">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="muonsachOption.id === editForm.get('muonsach')!.value?.id ? editForm.get('muonsach')!.value : muonsachOption"
+              *ngFor="let muonsachOption of muonsachesSharedCollection; trackBy: trackMuonsachById"
+            >
+              {{ muonsachOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

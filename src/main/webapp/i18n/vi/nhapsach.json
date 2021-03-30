@@ -1,0 +1,28 @@
+{
+  "libraryApplicationApp": {
+    "nhapsach": {
+      "home": {
+        "title": "Nhapsaches",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Nhapsach",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Nhapsach",
+        "notFound": "No Nhapsaches found"
+      },
+      "created": "Một Nhapsach mới được tạo với định danh {{ param }}",
+      "updated": "Một Nhapsach cập nhật với định danh {{ param }}",
+      "deleted": "Một Nhapsach đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Nhapsach {{ id }}?"
+      },
+      "detail": {
+        "title": "Nhapsach"
+      },
+      "id": "ID",
+      "ngayGioNhap": "Ngay Gio Nhap",
+      "soLuong": "So Luong",
+      "thuthu": "Thuthu",
+      "thuthu": "Thuthu",
+      "sach": "Sach"
+    }
+  }
+}

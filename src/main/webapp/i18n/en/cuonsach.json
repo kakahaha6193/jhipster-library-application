@@ -1,0 +1,27 @@
+{
+  "libraryApplicationApp": {
+    "cuonsach": {
+      "home": {
+        "title": "Cuonsaches",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Cuonsach",
+        "createOrEditLabel": "Create or edit a Cuonsach",
+        "notFound": "No Cuonsaches found"
+      },
+      "created": "A new Cuonsach is created with identifier {{ param }}",
+      "updated": "A Cuonsach is updated with identifier {{ param }}",
+      "deleted": "A Cuonsach is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Cuonsach {{ id }}?"
+      },
+      "detail": {
+        "title": "Cuonsach"
+      },
+      "id": "ID",
+      "ngayHetHan": "Ngay Het Han",
+      "trangThai": "Trang Thai",
+      "sach": "Sach",
+      "muonsach": "Muonsach"
+    }
+  }
+}

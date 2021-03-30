@@ -1,0 +1,28 @@
+{
+  "libraryApplicationApp": {
+    "nhapsach": {
+      "home": {
+        "title": "Nhapsaches",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Nhapsach",
+        "createOrEditLabel": "Create or edit a Nhapsach",
+        "notFound": "No Nhapsaches found"
+      },
+      "created": "A new Nhapsach is created with identifier {{ param }}",
+      "updated": "A Nhapsach is updated with identifier {{ param }}",
+      "deleted": "A Nhapsach is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Nhapsach {{ id }}?"
+      },
+      "detail": {
+        "title": "Nhapsach"
+      },
+      "id": "ID",
+      "ngayGioNhap": "Ngay Gio Nhap",
+      "soLuong": "So Luong",
+      "thuthu": "Thuthu",
+      "thuthu": "Thuthu",
+      "sach": "Sach"
+    }
+  }
+}

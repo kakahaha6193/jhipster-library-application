@@ -1,0 +1,24 @@
+{
+  "name": "Phongdungsach",
+  "fields": [
+    {
+      "fieldName": "tenPhong",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "viTri",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "phongdungsach",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210330143629"
+}

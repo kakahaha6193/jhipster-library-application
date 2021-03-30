@@ -1,0 +1,29 @@
+{
+  "libraryApplicationApp": {
+    "thuephong": {
+      "home": {
+        "title": "Thuephongs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Thuephong",
+        "createOrEditLabel": "Create or edit a Thuephong",
+        "notFound": "No Thuephongs found"
+      },
+      "created": "A new Thuephong is created with identifier {{ param }}",
+      "updated": "A Thuephong is updated with identifier {{ param }}",
+      "deleted": "A Thuephong is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Thuephong {{ id }}?"
+      },
+      "detail": {
+        "title": "Thuephong"
+      },
+      "id": "ID",
+      "ngayThue": "Ngay Thue",
+      "ca": "Ca",
+      "docgia": "Docgia",
+      "phongdocsach": "Phongdocsach",
+      "docgia": "Docgia",
+      "thuthu": "Thuthu"
+    }
+  }
+}

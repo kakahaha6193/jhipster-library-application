@@ -1,0 +1,27 @@
+{
+  "libraryApplicationApp": {
+    "phongdocsach": {
+      "home": {
+        "title": "Phongdocsaches",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Phongdocsach",
+        "createOrEditLabel": "Create or edit a Phongdocsach",
+        "notFound": "No Phongdocsaches found"
+      },
+      "created": "A new Phongdocsach is created with identifier {{ param }}",
+      "updated": "A Phongdocsach is updated with identifier {{ param }}",
+      "deleted": "A Phongdocsach is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Phongdocsach {{ id }}?"
+      },
+      "detail": {
+        "title": "Phongdocsach"
+      },
+      "id": "ID",
+      "tenPhong": "Ten Phong",
+      "viTri": "Vi Tri",
+      "sucChua": "Suc Chua",
+      "giaThue": "Gia Thue"
+    }
+  }
+}

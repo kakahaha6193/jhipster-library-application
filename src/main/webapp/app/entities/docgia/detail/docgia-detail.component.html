@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="docgia">
+      <h2 data-cy="docgiaDetailsHeading"><span jhiTranslate="libraryApplicationApp.docgia.detail.title">Docgia</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ docgia.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.docgia.hoTen">Ho Ten</span></dt>
+        <dd>
+          <span>{{ docgia.hoTen }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.docgia.ngaySinh">Ngay Sinh</span></dt>
+        <dd>
+          <span>{{ docgia.ngaySinh | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.docgia.diaChi">Dia Chi</span></dt>
+        <dd>
+          <span>{{ docgia.diaChi }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.docgia.cmt">Cmt</span></dt>
+        <dd>
+          <span>{{ docgia.cmt }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.docgia.trangThai">Trang Thai</span></dt>
+        <dd>
+          <span>{{ docgia.trangThai }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.docgia.tienCoc">Tien Coc</span></dt>
+        <dd>
+          <span>{{ docgia.tienCoc }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/docgia', docgia.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

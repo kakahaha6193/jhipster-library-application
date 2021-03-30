@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-docgia-heading" data-cy="DocgiaCreateUpdateHeading" jhiTranslate="libraryApplicationApp.docgia.home.createOrEditLabel">
+        Create or edit a Docgia
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.docgia.hoTen" for="field_hoTen">Ho Ten</label>
+          <input type="text" class="form-control" name="hoTen" id="field_hoTen" data-cy="hoTen" formControlName="hoTen" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.docgia.ngaySinh" for="field_ngaySinh">Ngay Sinh</label>
+          <div class="d-flex">
+            <input
+              id="field_ngaySinh"
+              data-cy="ngaySinh"
+              type="datetime-local"
+              class="form-control"
+              name="ngaySinh"
+              formControlName="ngaySinh"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.docgia.diaChi" for="field_diaChi">Dia Chi</label>
+          <input type="text" class="form-control" name="diaChi" id="field_diaChi" data-cy="diaChi" formControlName="diaChi" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.docgia.cmt" for="field_cmt">Cmt</label>
+          <input type="text" class="form-control" name="cmt" id="field_cmt" data-cy="cmt" formControlName="cmt" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.docgia.trangThai" for="field_trangThai">Trang Thai</label>
+          <input type="number" class="form-control" name="trangThai" id="field_trangThai" data-cy="trangThai" formControlName="trangThai" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.docgia.tienCoc" for="field_tienCoc">Tien Coc</label>
+          <input type="number" class="form-control" name="tienCoc" id="field_tienCoc" data-cy="tienCoc" formControlName="tienCoc" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

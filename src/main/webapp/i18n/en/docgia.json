@@ -1,0 +1,31 @@
+{
+  "libraryApplicationApp": {
+    "docgia": {
+      "home": {
+        "title": "Docgias",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Docgia",
+        "createOrEditLabel": "Create or edit a Docgia",
+        "notFound": "No Docgias found"
+      },
+      "created": "A new Docgia is created with identifier {{ param }}",
+      "updated": "A Docgia is updated with identifier {{ param }}",
+      "deleted": "A Docgia is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Docgia {{ id }}?"
+      },
+      "detail": {
+        "title": "Docgia"
+      },
+      "id": "ID",
+      "hoTen": "Ho Ten",
+      "ngaySinh": "Ngay Sinh",
+      "diaChi": "Dia Chi",
+      "cmt": "Cmt",
+      "trangThai": "Trang Thai",
+      "tienCoc": "Tien Coc",
+      "thuephong": "Thuephong",
+      "muonsach": "Muonsach"
+    }
+  }
+}

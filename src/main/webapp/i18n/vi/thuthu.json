@@ -1,0 +1,29 @@
+{
+  "libraryApplicationApp": {
+    "thuthu": {
+      "home": {
+        "title": "Thuthus",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Thuthu",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Thuthu",
+        "notFound": "No Thuthus found"
+      },
+      "created": "Một Thuthu mới được tạo với định danh {{ param }}",
+      "updated": "Một Thuthu cập nhật với định danh {{ param }}",
+      "deleted": "Một Thuthu đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Thuthu {{ id }}?"
+      },
+      "detail": {
+        "title": "Thuthu"
+      },
+      "id": "ID",
+      "hoTen": "Ho Ten",
+      "username": "Username",
+      "password": "Password",
+      "nhapsach": "Nhapsach",
+      "muonsach": "Muonsach",
+      "thuephong": "Thuephong"
+    }
+  }
+}

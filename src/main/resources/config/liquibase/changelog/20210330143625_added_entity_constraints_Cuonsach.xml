@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Cuonsach.
+    -->
+    <changeSet id="20210330143625-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="sach_id"
+                                 baseTableName="cuonsach"
+                                 constraintName="fk_cuonsach__sach_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sach"/>
+
+        <addForeignKeyConstraint baseColumnNames="muonsach_id"
+                                 baseTableName="cuonsach"
+                                 constraintName="fk_cuonsach__muonsach_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="muonsach"/>
+
+    </changeSet>
+</databaseChangeLog>
