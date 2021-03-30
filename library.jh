@@ -1,0 +1,101 @@
+
+entity Sach {
+	tenSach String,
+    giaNiemYet Integer,
+    tacgia String,
+    giaThue Long,
+    nganXep String
+}
+
+entity Cuonsach {
+	ngayHetHan Instant,
+    trangThai Integer
+}
+
+entity Giasach {
+	thuTu Integer
+}
+
+entity Nhaxuatban {
+	tenNXB String,
+    diaChi String,
+}
+
+entity Theloai {
+	tenTheLoai String
+}
+
+entity Phongdungsach {
+    tenPhong String
+    viTri String
+}
+
+entity Nhapsach {
+	ngayGioNhap Instant,
+	soLuong Integer
+}
+
+entity Phongdocsach {
+	tenPhong String,
+	viTri String,
+    sucChua Integer,
+    giaThue Long
+}
+
+entity Muonsach {
+    ngayMuon Instant,
+    hanTra Instant,
+    ngayTra Instant,
+    trangThai Integer
+}
+
+entity Thuephong {
+	ngayThue Instant,
+    ca Integer
+}
+
+entity Thuthu {
+	hoTen String,
+	username String,
+	password String
+}
+
+entity Docgia {
+	hoTen String,
+	ngaySinh Instant,
+	diaChi String,
+    cmt String,
+    trangThai Integer,
+    tienCoc Long
+}
+
+relationship ManyToMany {
+	Sach{nhapsach} to Nhapsach{sach}
+}
+
+
+relationship OneToMany {
+	Docgia to Thuephong{docgia},
+	Docgia to Muonsach{docgia}
+    Muonsach to Cuonsach{muonsach}
+    Thuthu to Nhapsach{thuthu}
+    Thuthu to Muonsach{thuthu}
+    Thuthu to Thuephong{thuthu}
+}
+
+relationship ManyToOne {
+	Sach{theloai} to Theloai,
+	Sach{nhaxuatban} to Nhaxuatban
+    Sach{giasach} to Giasach
+    Cuonsach{sach} to Sach
+    Muonsach{docgia} to Docgia
+    Thuephong{docgia} to Docgia
+    Thuephong{phongdocsach} to Phongdocsach
+    Nhapsach{thuthu} to Thuthu
+    Giasach{phongdungsach} to Phongdungsach
+}
+paginate Sach, Muonsach, Thuephong with infinite-scroll
+paginate Sach, Muonsach, Thuephong with pagination
+service all with serviceImpl except Sach, Muonsach, Thuephong
+
+

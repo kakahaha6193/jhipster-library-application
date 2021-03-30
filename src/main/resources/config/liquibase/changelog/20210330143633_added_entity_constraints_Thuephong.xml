@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Thuephong.
+    -->
+    <changeSet id="20210330143633-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="docgia_id"
+                                 baseTableName="thuephong"
+                                 constraintName="fk_thuephong__docgia_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="docgia"/>
+
+        <addForeignKeyConstraint baseColumnNames="phongdocsach_id"
+                                 baseTableName="thuephong"
+                                 constraintName="fk_thuephong__phongdocsach_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="phongdocsach"/>
+
+        <addForeignKeyConstraint baseColumnNames="docgia_id"
+                                 baseTableName="thuephong"
+                                 constraintName="fk_thuephong__docgia_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="docgia"/>
+
+        <addForeignKeyConstraint baseColumnNames="thuthu_id"
+                                 baseTableName="thuephong"
+                                 constraintName="fk_thuephong__thuthu_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="thuthu"/>
+
+    </changeSet>
+</databaseChangeLog>

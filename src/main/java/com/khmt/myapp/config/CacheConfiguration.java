@@ -48,6 +48,26 @@ public class CacheConfiguration {
             createCache(cm, com.khmt.myapp.domain.User.class.getName());
             createCache(cm, com.khmt.myapp.domain.Authority.class.getName());
             createCache(cm, com.khmt.myapp.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.khmt.myapp.domain.Sach.class.getName());
+            createCache(cm, com.khmt.myapp.domain.Sach.class.getName() + ".nhapsaches");
+            createCache(cm, com.khmt.myapp.domain.Cuonsach.class.getName());
+            createCache(cm, com.khmt.myapp.domain.Giasach.class.getName());
+            createCache(cm, com.khmt.myapp.domain.Nhaxuatban.class.getName());
+            createCache(cm, com.khmt.myapp.domain.Theloai.class.getName());
+            createCache(cm, com.khmt.myapp.domain.Phongdungsach.class.getName());
+            createCache(cm, com.khmt.myapp.domain.Nhapsach.class.getName());
+            createCache(cm, com.khmt.myapp.domain.Nhapsach.class.getName() + ".saches");
+            createCache(cm, com.khmt.myapp.domain.Phongdocsach.class.getName());
+            createCache(cm, com.khmt.myapp.domain.Muonsach.class.getName());
+            createCache(cm, com.khmt.myapp.domain.Muonsach.class.getName() + ".cuonsaches");
+            createCache(cm, com.khmt.myapp.domain.Thuephong.class.getName());
+            createCache(cm, com.khmt.myapp.domain.Thuthu.class.getName());
+            createCache(cm, com.khmt.myapp.domain.Thuthu.class.getName() + ".nhapsaches");
+            createCache(cm, com.khmt.myapp.domain.Thuthu.class.getName() + ".muonsaches");
+            createCache(cm, com.khmt.myapp.domain.Thuthu.class.getName() + ".thuephongs");
+            createCache(cm, com.khmt.myapp.domain.Docgia.class.getName());
+            createCache(cm, com.khmt.myapp.domain.Docgia.class.getName() + ".thuephongs");
+            createCache(cm, com.khmt.myapp.domain.Docgia.class.getName() + ".muonsaches");
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,84 @@
+<div>
+  <h2 id="page-heading" data-cy="GiasachHeading">
+    <span jhiTranslate="libraryApplicationApp.giasach.home.title">Giasaches</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="libraryApplicationApp.giasach.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-giasach"
+        [routerLink]="['/giasach/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="libraryApplicationApp.giasach.home.createLabel"> Create a new Giasach </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="giasaches?.length === 0">
+    <span jhiTranslate="libraryApplicationApp.giasach.home.notFound">No giasaches found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="giasaches && giasaches.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="libraryApplicationApp.giasach.thuTu">Thu Tu</span></th>
+          <th scope="col"><span jhiTranslate="libraryApplicationApp.giasach.phongdungsach">Phongdungsach</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let giasach of giasaches; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/giasach', giasach.id, 'view']">{{ giasach.id }}</a>
+          </td>
+          <td>{{ giasach.thuTu }}</td>
+          <td>
+            <div *ngIf="giasach.phongdungsach">
+              <a [routerLink]="['/phongdungsach', giasach.phongdungsach?.id, 'view']">{{ giasach.phongdungsach?.id }}</a>
+            </div>
+          </td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/giasach', giasach.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/giasach', giasach.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(giasach)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

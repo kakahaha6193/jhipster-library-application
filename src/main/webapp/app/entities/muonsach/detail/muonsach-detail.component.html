@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="muonsach">
+      <h2 data-cy="muonsachDetailsHeading"><span jhiTranslate="libraryApplicationApp.muonsach.detail.title">Muonsach</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ muonsach.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.muonsach.ngayMuon">Ngay Muon</span></dt>
+        <dd>
+          <span>{{ muonsach.ngayMuon | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.muonsach.hanTra">Han Tra</span></dt>
+        <dd>
+          <span>{{ muonsach.hanTra | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.muonsach.ngayTra">Ngay Tra</span></dt>
+        <dd>
+          <span>{{ muonsach.ngayTra | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.muonsach.trangThai">Trang Thai</span></dt>
+        <dd>
+          <span>{{ muonsach.trangThai }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.muonsach.docgia">Docgia</span></dt>
+        <dd>
+          <div *ngIf="muonsach.docgia">
+            <a [routerLink]="['/docgia', muonsach.docgia?.id, 'view']">{{ muonsach.docgia?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.muonsach.docgia">Docgia</span></dt>
+        <dd>
+          <div *ngIf="muonsach.docgia">
+            <a [routerLink]="['/docgia', muonsach.docgia?.id, 'view']">{{ muonsach.docgia?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.muonsach.thuthu">Thuthu</span></dt>
+        <dd>
+          <div *ngIf="muonsach.thuthu">
+            <a [routerLink]="['/thuthu', muonsach.thuthu?.id, 'view']">{{ muonsach.thuthu?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/muonsach', muonsach.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

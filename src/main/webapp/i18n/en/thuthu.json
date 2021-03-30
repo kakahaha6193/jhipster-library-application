@@ -1,0 +1,29 @@
+{
+  "libraryApplicationApp": {
+    "thuthu": {
+      "home": {
+        "title": "Thuthus",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Thuthu",
+        "createOrEditLabel": "Create or edit a Thuthu",
+        "notFound": "No Thuthus found"
+      },
+      "created": "A new Thuthu is created with identifier {{ param }}",
+      "updated": "A Thuthu is updated with identifier {{ param }}",
+      "deleted": "A Thuthu is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Thuthu {{ id }}?"
+      },
+      "detail": {
+        "title": "Thuthu"
+      },
+      "id": "ID",
+      "hoTen": "Ho Ten",
+      "username": "Username",
+      "password": "Password",
+      "nhapsach": "Nhapsach",
+      "muonsach": "Muonsach",
+      "thuephong": "Thuephong"
+    }
+  }
+}

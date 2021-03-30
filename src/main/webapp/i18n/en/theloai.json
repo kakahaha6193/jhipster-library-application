@@ -1,0 +1,24 @@
+{
+  "libraryApplicationApp": {
+    "theloai": {
+      "home": {
+        "title": "Theloais",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Theloai",
+        "createOrEditLabel": "Create or edit a Theloai",
+        "notFound": "No Theloais found"
+      },
+      "created": "A new Theloai is created with identifier {{ param }}",
+      "updated": "A Theloai is updated with identifier {{ param }}",
+      "deleted": "A Theloai is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Theloai {{ id }}?"
+      },
+      "detail": {
+        "title": "Theloai"
+      },
+      "id": "ID",
+      "tenTheLoai": "Ten The Loai"
+    }
+  }
+}

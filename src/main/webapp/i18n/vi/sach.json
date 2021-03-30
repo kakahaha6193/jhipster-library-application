@@ -1,0 +1,32 @@
+{
+  "libraryApplicationApp": {
+    "sach": {
+      "home": {
+        "title": "Saches",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Sach",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Sach",
+        "notFound": "No Saches found"
+      },
+      "created": "Một Sach mới được tạo với định danh {{ param }}",
+      "updated": "Một Sach cập nhật với định danh {{ param }}",
+      "deleted": "Một Sach đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Sach {{ id }}?"
+      },
+      "detail": {
+        "title": "Sach"
+      },
+      "id": "ID",
+      "tenSach": "Ten Sach",
+      "giaNiemYet": "Gia Niem Yet",
+      "tacgia": "Tacgia",
+      "giaThue": "Gia Thue",
+      "nganXep": "Ngan Xep",
+      "theloai": "Theloai",
+      "nhaxuatban": "Nhaxuatban",
+      "giasach": "Giasach",
+      "nhapsach": "Nhapsach"
+    }
+  }
+}

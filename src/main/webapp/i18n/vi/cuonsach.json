@@ -1,0 +1,27 @@
+{
+  "libraryApplicationApp": {
+    "cuonsach": {
+      "home": {
+        "title": "Cuonsaches",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Cuonsach",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Cuonsach",
+        "notFound": "No Cuonsaches found"
+      },
+      "created": "Một Cuonsach mới được tạo với định danh {{ param }}",
+      "updated": "Một Cuonsach cập nhật với định danh {{ param }}",
+      "deleted": "Một Cuonsach đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Cuonsach {{ id }}?"
+      },
+      "detail": {
+        "title": "Cuonsach"
+      },
+      "id": "ID",
+      "ngayHetHan": "Ngay Het Han",
+      "trangThai": "Trang Thai",
+      "sach": "Sach",
+      "muonsach": "Muonsach"
+    }
+  }
+}

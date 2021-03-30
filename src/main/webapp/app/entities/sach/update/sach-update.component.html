@@ -1,0 +1,119 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-sach-heading" data-cy="SachCreateUpdateHeading" jhiTranslate="libraryApplicationApp.sach.home.createOrEditLabel">
+        Create or edit a Sach
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.sach.tenSach" for="field_tenSach">Ten Sach</label>
+          <input type="text" class="form-control" name="tenSach" id="field_tenSach" data-cy="tenSach" formControlName="tenSach" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.sach.giaNiemYet" for="field_giaNiemYet">Gia Niem Yet</label>
+          <input
+            type="number"
+            class="form-control"
+            name="giaNiemYet"
+            id="field_giaNiemYet"
+            data-cy="giaNiemYet"
+            formControlName="giaNiemYet"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.sach.tacgia" for="field_tacgia">Tacgia</label>
+          <input type="text" class="form-control" name="tacgia" id="field_tacgia" data-cy="tacgia" formControlName="tacgia" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.sach.giaThue" for="field_giaThue">Gia Thue</label>
+          <input type="number" class="form-control" name="giaThue" id="field_giaThue" data-cy="giaThue" formControlName="giaThue" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.sach.nganXep" for="field_nganXep">Ngan Xep</label>
+          <input type="text" class="form-control" name="nganXep" id="field_nganXep" data-cy="nganXep" formControlName="nganXep" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.sach.theloai" for="field_theloai">Theloai</label>
+          <select class="form-control" id="field_theloai" data-cy="theloai" name="theloai" formControlName="theloai">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="theloaiOption.id === editForm.get('theloai')!.value?.id ? editForm.get('theloai')!.value : theloaiOption"
+              *ngFor="let theloaiOption of theloaisSharedCollection; trackBy: trackTheloaiById"
+            >
+              {{ theloaiOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.sach.nhaxuatban" for="field_nhaxuatban">Nhaxuatban</label>
+          <select class="form-control" id="field_nhaxuatban" data-cy="nhaxuatban" name="nhaxuatban" formControlName="nhaxuatban">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                nhaxuatbanOption.id === editForm.get('nhaxuatban')!.value?.id ? editForm.get('nhaxuatban')!.value : nhaxuatbanOption
+              "
+              *ngFor="let nhaxuatbanOption of nhaxuatbansSharedCollection; trackBy: trackNhaxuatbanById"
+            >
+              {{ nhaxuatbanOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.sach.giasach" for="field_giasach">Giasach</label>
+          <select class="form-control" id="field_giasach" data-cy="giasach" name="giasach" formControlName="giasach">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="giasachOption.id === editForm.get('giasach')!.value?.id ? editForm.get('giasach')!.value : giasachOption"
+              *ngFor="let giasachOption of giasachesSharedCollection; trackBy: trackGiasachById"
+            >
+              {{ giasachOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label jhiTranslate="libraryApplicationApp.sach.nhapsach" for="field_nhapsaches">Nhapsach</label>
+          <select class="form-control" id="field_nhapsaches" data-cy="nhapsach" multiple name="nhapsaches" formControlName="nhapsaches">
+            <option
+              [ngValue]="getSelectedNhapsach(nhapsachOption, editForm.get('nhapsaches')!.value)"
+              *ngFor="let nhapsachOption of nhapsachesSharedCollection; trackBy: trackNhapsachById"
+            >
+              {{ nhapsachOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

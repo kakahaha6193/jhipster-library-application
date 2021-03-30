@@ -7,6 +7,18 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "sach": "Sach",
+        "cuonsach": "Cuonsach",
+        "giasach": "Giasach",
+        "nhaxuatban": "Nhaxuatban",
+        "theloai": "Theloai",
+        "phongdungsach": "Phongdungsach",
+        "nhapsach": "Nhapsach",
+        "phongdocsach": "Phongdocsach",
+        "muonsach": "Muonsach",
+        "thuephong": "Thuephong",
+        "thuthu": "Thuthu",
+        "docgia": "Docgia",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

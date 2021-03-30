@@ -1,0 +1,49 @@
+{
+  "name": "Thuephong",
+  "fields": [
+    {
+      "fieldName": "ngayThue",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "ca",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "docgia",
+      "otherEntityRelationshipName": "thuephong",
+      "relationshipName": "docgia"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "phongdocsach",
+      "otherEntityRelationshipName": "thuephong",
+      "relationshipName": "phongdocsach"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "docgia",
+      "otherEntityRelationshipName": "thuephong",
+      "relationshipName": "docgia"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "thuthu",
+      "otherEntityRelationshipName": "thuephong",
+      "relationshipName": "thuthu"
+    }
+  ],
+  "entityTableName": "thuephong",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210330143633"
+}

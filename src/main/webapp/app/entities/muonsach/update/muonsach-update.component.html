@@ -1,0 +1,127 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-muonsach-heading"
+        data-cy="MuonsachCreateUpdateHeading"
+        jhiTranslate="libraryApplicationApp.muonsach.home.createOrEditLabel"
+      >
+        Create or edit a Muonsach
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.muonsach.ngayMuon" for="field_ngayMuon">Ngay Muon</label>
+          <div class="d-flex">
+            <input
+              id="field_ngayMuon"
+              data-cy="ngayMuon"
+              type="datetime-local"
+              class="form-control"
+              name="ngayMuon"
+              formControlName="ngayMuon"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.muonsach.hanTra" for="field_hanTra">Han Tra</label>
+          <div class="d-flex">
+            <input
+              id="field_hanTra"
+              data-cy="hanTra"
+              type="datetime-local"
+              class="form-control"
+              name="hanTra"
+              formControlName="hanTra"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.muonsach.ngayTra" for="field_ngayTra">Ngay Tra</label>
+          <div class="d-flex">
+            <input
+              id="field_ngayTra"
+              data-cy="ngayTra"
+              type="datetime-local"
+              class="form-control"
+              name="ngayTra"
+              formControlName="ngayTra"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.muonsach.trangThai" for="field_trangThai">Trang Thai</label>
+          <input type="number" class="form-control" name="trangThai" id="field_trangThai" data-cy="trangThai" formControlName="trangThai" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.muonsach.docgia" for="field_docgia">Docgia</label>
+          <select class="form-control" id="field_docgia" data-cy="docgia" name="docgia" formControlName="docgia">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="docgiaOption.id === editForm.get('docgia')!.value?.id ? editForm.get('docgia')!.value : docgiaOption"
+              *ngFor="let docgiaOption of docgiasSharedCollection; trackBy: trackDocgiaById"
+            >
+              {{ docgiaOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.muonsach.docgia" for="field_docgia">Docgia</label>
+          <select class="form-control" id="field_docgia" data-cy="docgia" name="docgia" formControlName="docgia">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="docgiaOption.id === editForm.get('docgia')!.value?.id ? editForm.get('docgia')!.value : docgiaOption"
+              *ngFor="let docgiaOption of docgiasSharedCollection; trackBy: trackDocgiaById"
+            >
+              {{ docgiaOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="libraryApplicationApp.muonsach.thuthu" for="field_thuthu">Thuthu</label>
+          <select class="form-control" id="field_thuthu" data-cy="thuthu" name="thuthu" formControlName="thuthu">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="thuthuOption.id === editForm.get('thuthu')!.value?.id ? editForm.get('thuthu')!.value : thuthuOption"
+              *ngFor="let thuthuOption of thuthusSharedCollection; trackBy: trackThuthuById"
+            >
+              {{ thuthuOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

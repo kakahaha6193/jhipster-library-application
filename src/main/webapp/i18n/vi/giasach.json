@@ -1,0 +1,25 @@
+{
+  "libraryApplicationApp": {
+    "giasach": {
+      "home": {
+        "title": "Giasaches",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Giasach",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Giasach",
+        "notFound": "No Giasaches found"
+      },
+      "created": "Một Giasach mới được tạo với định danh {{ param }}",
+      "updated": "Một Giasach cập nhật với định danh {{ param }}",
+      "deleted": "Một Giasach đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Giasach {{ id }}?"
+      },
+      "detail": {
+        "title": "Giasach"
+      },
+      "id": "ID",
+      "thuTu": "Thu Tu",
+      "phongdungsach": "Phongdungsach"
+    }
+  }
+}

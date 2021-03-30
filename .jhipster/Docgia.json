@@ -1,0 +1,53 @@
+{
+  "name": "Docgia",
+  "fields": [
+    {
+      "fieldName": "hoTen",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ngaySinh",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "diaChi",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "trangThai",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tienCoc",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "thuephong",
+      "otherEntityRelationshipName": "docgia",
+      "relationshipName": "thuephong"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "muonsach",
+      "otherEntityRelationshipName": "docgia",
+      "relationshipName": "muonsach"
+    }
+  ],
+  "entityTableName": "docgia",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210330143635"
+}

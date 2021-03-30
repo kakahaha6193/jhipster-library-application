@@ -1,0 +1,84 @@
+<div>
+  <h2 id="page-heading" data-cy="PhongdocsachHeading">
+    <span jhiTranslate="libraryApplicationApp.phongdocsach.home.title">Phongdocsaches</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="libraryApplicationApp.phongdocsach.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-phongdocsach"
+        [routerLink]="['/phongdocsach/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="libraryApplicationApp.phongdocsach.home.createLabel"> Create a new Phongdocsach </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="phongdocsaches?.length === 0">
+    <span jhiTranslate="libraryApplicationApp.phongdocsach.home.notFound">No phongdocsaches found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="phongdocsaches && phongdocsaches.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="libraryApplicationApp.phongdocsach.tenPhong">Ten Phong</span></th>
+          <th scope="col"><span jhiTranslate="libraryApplicationApp.phongdocsach.viTri">Vi Tri</span></th>
+          <th scope="col"><span jhiTranslate="libraryApplicationApp.phongdocsach.sucChua">Suc Chua</span></th>
+          <th scope="col"><span jhiTranslate="libraryApplicationApp.phongdocsach.giaThue">Gia Thue</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let phongdocsach of phongdocsaches; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/phongdocsach', phongdocsach.id, 'view']">{{ phongdocsach.id }}</a>
+          </td>
+          <td>{{ phongdocsach.tenPhong }}</td>
+          <td>{{ phongdocsach.viTri }}</td>
+          <td>{{ phongdocsach.sucChua }}</td>
+          <td>{{ phongdocsach.giaThue }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/phongdocsach', phongdocsach.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/phongdocsach', phongdocsach.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(phongdocsach)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

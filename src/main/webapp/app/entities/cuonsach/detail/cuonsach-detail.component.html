@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="cuonsach">
+      <h2 data-cy="cuonsachDetailsHeading"><span jhiTranslate="libraryApplicationApp.cuonsach.detail.title">Cuonsach</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ cuonsach.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.cuonsach.ngayHetHan">Ngay Het Han</span></dt>
+        <dd>
+          <span>{{ cuonsach.ngayHetHan | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.cuonsach.trangThai">Trang Thai</span></dt>
+        <dd>
+          <span>{{ cuonsach.trangThai }}</span>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.cuonsach.sach">Sach</span></dt>
+        <dd>
+          <div *ngIf="cuonsach.sach">
+            <a [routerLink]="['/sach', cuonsach.sach?.id, 'view']">{{ cuonsach.sach?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="libraryApplicationApp.cuonsach.muonsach">Muonsach</span></dt>
+        <dd>
+          <div *ngIf="cuonsach.muonsach">
+            <a [routerLink]="['/muonsach', cuonsach.muonsach?.id, 'view']">{{ cuonsach.muonsach?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/cuonsach', cuonsach.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

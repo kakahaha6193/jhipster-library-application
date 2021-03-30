@@ -1,0 +1,47 @@
+{
+  "name": "Thuthu",
+  "fields": [
+    {
+      "fieldName": "hoTen",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "username",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "password",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "nhapsach",
+      "otherEntityRelationshipName": "thuthu",
+      "relationshipName": "nhapsach"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "muonsach",
+      "otherEntityRelationshipName": "thuthu",
+      "relationshipName": "muonsach"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "thuephong",
+      "otherEntityRelationshipName": "thuthu",
+      "relationshipName": "thuephong"
+    }
+  ],
+  "entityTableName": "thuthu",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210330143634"
+}
