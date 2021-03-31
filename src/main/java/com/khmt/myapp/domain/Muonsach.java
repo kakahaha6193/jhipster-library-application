@@ -45,10 +45,6 @@ public class Muonsach implements Serializable {
     private Docgia docgia;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "thuephongs", "muonsaches" }, allowSetters = true)
-    private Docgia docgia;
-
-    @ManyToOne
     @JsonIgnoreProperties(value = { "nhapsaches", "muonsaches", "thuephongs" }, allowSetters = true)
     private Thuthu thuthu;
 
@@ -149,26 +145,13 @@ public class Muonsach implements Serializable {
         this.cuonsaches = cuonsaches;
     }
 
-    public Docgia getDocgia() {
-        return this.docgia;
-    }
-
     public Muonsach docgia(Docgia docgia) {
         this.setDocgia(docgia);
         return this;
     }
 
-    public void setDocgia(Docgia docgia) {
-        this.docgia = docgia;
-    }
-
     public Docgia getDocgia() {
         return this.docgia;
-    }
-
-    public Muonsach docgia(Docgia docgia) {
-        this.setDocgia(docgia);
-        return this;
     }
 
     public void setDocgia(Docgia docgia) {

@@ -27,7 +27,6 @@ export class NhapsachUpdateComponent implements OnInit {
     ngayGioNhap: [],
     soLuong: [],
     thuthu: [],
-    thuthu: [],
   });
 
   constructor(
@@ -93,7 +92,6 @@ export class NhapsachUpdateComponent implements OnInit {
       ngayGioNhap: nhapsach.ngayGioNhap ? nhapsach.ngayGioNhap.format(DATE_TIME_FORMAT) : null,
       soLuong: nhapsach.soLuong,
       thuthu: nhapsach.thuthu,
-      thuthu: nhapsach.thuthu,
     });
 
     this.thuthusSharedCollection = this.thuthuService.addThuthuToCollectionIfMissing(
@@ -123,7 +121,6 @@ export class NhapsachUpdateComponent implements OnInit {
         ? dayjs(this.editForm.get(['ngayGioNhap'])!.value, DATE_TIME_FORMAT)
         : undefined,
       soLuong: this.editForm.get(['soLuong'])!.value,
-      thuthu: this.editForm.get(['thuthu'])!.value,
       thuthu: this.editForm.get(['thuthu'])!.value,
     };
   }

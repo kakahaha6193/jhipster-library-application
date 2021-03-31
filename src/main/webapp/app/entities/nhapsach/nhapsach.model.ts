@@ -7,7 +7,6 @@ export interface INhapsach {
   ngayGioNhap?: dayjs.Dayjs | null;
   soLuong?: number | null;
   thuthu?: IThuthu | null;
-  thuthu?: IThuthu | null;
   saches?: ISach[] | null;
 }
 
@@ -16,7 +15,6 @@ export class Nhapsach implements INhapsach {
     public id?: number,
     public ngayGioNhap?: dayjs.Dayjs | null,
     public soLuong?: number | null,
-    public thuthu?: IThuthu | null,
     public thuthu?: IThuthu | null,
     public saches?: ISach[] | null
   ) {}

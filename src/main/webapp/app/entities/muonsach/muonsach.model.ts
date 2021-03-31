@@ -11,7 +11,6 @@ export interface IMuonsach {
   trangThai?: number | null;
   cuonsaches?: ICuonsach[] | null;
   docgia?: IDocgia | null;
-  docgia?: IDocgia | null;
   thuthu?: IThuthu | null;
 }
 
@@ -23,7 +22,6 @@ export class Muonsach implements IMuonsach {
     public ngayTra?: dayjs.Dayjs | null,
     public trangThai?: number | null,
     public cuonsaches?: ICuonsach[] | null,
-    public docgia?: IDocgia | null,
     public docgia?: IDocgia | null,
     public thuthu?: IThuthu | null
   ) {}

@@ -33,10 +33,6 @@ public class Nhapsach implements Serializable {
     @JsonIgnoreProperties(value = { "nhapsaches", "muonsaches", "thuephongs" }, allowSetters = true)
     private Thuthu thuthu;
 
-    @ManyToOne
-    @JsonIgnoreProperties(value = { "nhapsaches", "muonsaches", "thuephongs" }, allowSetters = true)
-    private Thuthu thuthu;
-
     @ManyToMany(mappedBy = "nhapsaches")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "theloai", "nhaxuatban", "giasach", "nhapsaches" }, allowSetters = true)
@@ -82,10 +78,6 @@ public class Nhapsach implements Serializable {
         this.soLuong = soLuong;
     }
 
-    public Thuthu getThuthu() {
-        return this.thuthu;
-    }
-
     public Nhapsach thuthu(Thuthu thuthu) {
         this.setThuthu(thuthu);
         return this;
@@ -97,15 +89,6 @@ public class Nhapsach implements Serializable {
 
     public Thuthu getThuthu() {
         return this.thuthu;
-    }
-
-    public Nhapsach thuthu(Thuthu thuthu) {
-        this.setThuthu(thuthu);
-        return this;
-    }
-
-    public void setThuthu(Thuthu thuthu) {
-        this.thuthu = thuthu;
     }
 
     public Set<Sach> getSaches() {

@@ -35,10 +35,6 @@ public class Thuephong implements Serializable {
     private Phongdocsach phongdocsach;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "thuephongs", "muonsaches" }, allowSetters = true)
-    private Docgia docgia;
-
-    @ManyToOne
     @JsonIgnoreProperties(value = { "nhapsaches", "muonsaches", "thuephongs" }, allowSetters = true)
     private Thuthu thuthu;
 
@@ -86,15 +82,6 @@ public class Thuephong implements Serializable {
         return this.docgia;
     }
 
-    public Thuephong docgia(Docgia docgia) {
-        this.setDocgia(docgia);
-        return this;
-    }
-
-    public void setDocgia(Docgia docgia) {
-        this.docgia = docgia;
-    }
-
     public Phongdocsach getPhongdocsach() {
         return this.phongdocsach;
     }
@@ -106,10 +93,6 @@ public class Thuephong implements Serializable {
 
     public void setPhongdocsach(Phongdocsach phongdocsach) {
         this.phongdocsach = phongdocsach;
-    }
-
-    public Docgia getDocgia() {
-        return this.docgia;
     }
 
     public Thuephong docgia(Docgia docgia) {

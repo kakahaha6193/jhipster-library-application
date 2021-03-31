@@ -34,7 +34,6 @@ export class ThuephongUpdateComponent implements OnInit {
     ca: [],
     docgia: [],
     phongdocsach: [],
-    docgia: [],
     thuthu: [],
   });
 
@@ -112,7 +111,6 @@ export class ThuephongUpdateComponent implements OnInit {
       ca: thuephong.ca,
       docgia: thuephong.docgia,
       phongdocsach: thuephong.phongdocsach,
-      docgia: thuephong.docgia,
       thuthu: thuephong.thuthu,
     });
 
@@ -164,7 +162,6 @@ export class ThuephongUpdateComponent implements OnInit {
       ca: this.editForm.get(['ca'])!.value,
       docgia: this.editForm.get(['docgia'])!.value,
       phongdocsach: this.editForm.get(['phongdocsach'])!.value,
-      docgia: this.editForm.get(['docgia'])!.value,
       thuthu: this.editForm.get(['thuthu'])!.value,
     };
   }

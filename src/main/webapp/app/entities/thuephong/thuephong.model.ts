@@ -9,7 +9,6 @@ export interface IThuephong {
   ca?: number | null;
   docgia?: IDocgia | null;
   phongdocsach?: IPhongdocsach | null;
-  docgia?: IDocgia | null;
   thuthu?: IThuthu | null;
 }
 
@@ -20,7 +19,6 @@ export class Thuephong implements IThuephong {
     public ca?: number | null,
     public docgia?: IDocgia | null,
     public phongdocsach?: IPhongdocsach | null,
-    public docgia?: IDocgia | null,
     public thuthu?: IThuthu | null
   ) {}
 }

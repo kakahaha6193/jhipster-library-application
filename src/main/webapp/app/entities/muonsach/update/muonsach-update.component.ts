@@ -32,7 +32,6 @@ export class MuonsachUpdateComponent implements OnInit {
     ngayTra: [],
     trangThai: [],
     docgia: [],
-    docgia: [],
     thuthu: [],
   });
 
@@ -108,7 +107,6 @@ export class MuonsachUpdateComponent implements OnInit {
       ngayTra: muonsach.ngayTra ? muonsach.ngayTra.format(DATE_TIME_FORMAT) : null,
       trangThai: muonsach.trangThai,
       docgia: muonsach.docgia,
-      docgia: muonsach.docgia,
       thuthu: muonsach.thuthu,
     });
 
@@ -146,7 +144,6 @@ export class MuonsachUpdateComponent implements OnInit {
       hanTra: this.editForm.get(['hanTra'])!.value ? dayjs(this.editForm.get(['hanTra'])!.value, DATE_TIME_FORMAT) : undefined,
       ngayTra: this.editForm.get(['ngayTra'])!.value ? dayjs(this.editForm.get(['ngayTra'])!.value, DATE_TIME_FORMAT) : undefined,
       trangThai: this.editForm.get(['trangThai'])!.value,
-      docgia: this.editForm.get(['docgia'])!.value,
       docgia: this.editForm.get(['docgia'])!.value,
       thuthu: this.editForm.get(['thuthu'])!.value,
     };
